@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/483/483408.png" type="image/x-icon">
+  <script src="script.js" defer></script>
+  <title>Password Generator</title>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Password Generator</div>
+
+    <div class="wrapper">
+      <div class="input-box">
+        <input type="text" disabled>
+        <span onclick="copyPassword()" class="material-symbols-rounded">copy_all</span>
+      </div>
+
+      <div class="pass__difficulty"></div>
+
+      <div class="pass__lenght">
+        <div class="pass__lenght__details">
+          <label class="pass--title">Password lenght</label>
+          <span>15</span>
+        </div>
+
+        <input oninput="updateSlider()" type="range" min="1" max="30" value="15">
+      </div>
+
+      <div class="pass__settings">
+        <span class="pass--title">Settings</span>
+        <ul class="settings__options">
+          <li class="settings__option">
+            <input type="checkbox" id="lowercase" checked>
+            <label for="lowercase">Lowercase (a - z)</label>
+          </li>
+
+          <li class="settings__option">
+            <input type="checkbox" id="uppercase">
+            <label for="uppercase">Uppercase (A - Z)</label>
+          </li>
+
+          <li class="settings__option">
+            <input type="checkbox" id="numbers">
+            <label for="numbers">Numbers (0 - 9)</label>
+          </li>
+
+          <li class="settings__option">
+            <input type="checkbox" id="symbols">
+            <label for="symbols">Symbols (!*#$&)</label>
+          </li>
+
+          <li class="settings__option">
+            <input type="checkbox" id="exclude-duplicate">
+            <label for="exclude-duplicate">Exclude duplicate</label>
+          </li>
+
+          <li class="settings__option">
+            <input type="checkbox" id="include-spaces">
+            <label for="spaces">Include Spaces</label>
+          </li>
+        </ul>
+      </div>
+
+      <button onclick="generatePassword()" class="generate--btn">Generate Password</button>
+    </div>
+  </div>
+</body>
+</html>
