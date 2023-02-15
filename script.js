@@ -55,7 +55,28 @@ function copyPassword() {
 }
 
 function updatePasswordDifficulty() {
-  passDifficulty.id = lengthSlider.value <= 8 ? "weak" : lengthSlider.value <= 16 ? "medium" : "strong";
+  const 
+    uppercaseRegex = /^[a-zA-Z]*$/,
+    numbersRegex = /^[a-z0-9]*$/,
+    symbolsRegex = /^[a-z!@#$%^&*()_+~`|}{\[\]:;?><,.\/\-=\\]*$/,
+    numSymRegex = /^[a-z0-9!@#$%^&*()_+~`|}{\[\]:;?><,.\/\-=\\]*$/,
+    upperNumRegex = /^[a-zA-Z0-9]*$/,
+    upperSymRegex = /^[a-zA-Z!@#$%^&*()_+~`|}{\[\]:;?><,.\/\-=\\]*$/,
+    allRegex = /^[a-zA-Z0-9!@#$%^&*()_+~`|}{\[\]:;?><,.\/\-=\\]*$/
+  ;
+
+
+  if(passwordInput.value.length <= 6) {
+    passDifficulty.id = "weak"
+  } else {
+    if((uppercaseRegex.test(passwordInput.value)) || (numbersRegex.test(passwordInput.value)) || (symbolsRegex.test(passwordInput.value))){
+      passDifficulty.id = "weak"
+    } else if((numSymRegex.test(passwordInput.value)) || (upperNumRegex.test(passwordInput.value)) || (upperSymRegex.test(passwordInput.value))){
+      passDifficulty.id = "medium"
+    } else if(allRegex.test(passwordInput.value)){
+      passDifficulty.id = "strong"
+    }
+  }
 }
 
 function updateSlider() {
