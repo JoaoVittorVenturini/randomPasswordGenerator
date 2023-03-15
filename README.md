@@ -44,5 +44,3 @@ This is the link to
 <a target="_blank" href="https://joaovittorventurini.github.io/randomPasswordGenerator/">
   Page!
 </a>
- 
-<img src="https://media.discordapp.net/attachments/1052320663819526144/1075510687863930971/image.png" alt="exemple of aplication">
